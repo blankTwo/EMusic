@@ -1,5 +1,31 @@
 <div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+  <!--  -->
+  <div class="tools">
+    <div class="d-flex flex-row" style="height: inherit">
+      <div style="width: 400px;">
+        <div class="d-inline-block sf-title">
+          松鼠音乐
+        </div>
+        <div class="d-inline-block songSearch">
+          <input class="ant-input " type="input" />
+        </div>
+      </div>
+      <div class="tools-center">
+
+      </div>
+      <div class="sf-title-right">
+        <div class="sf-title-right-actions">
+          <ul>
+            <li><img (click)="onMinEvent()" src="assets/images/min.png" /></li>
+            <li><img (click)="onMaxEvent()" src="assets/images/max.png" /></li>
+            <li><img (click)="onCloseEvent()" src="assets/images/close.png" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <div class="d-flex flex-1">
+    <div class="me-list"></div>
+  </div>
 </div>
