@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ipcRenderer, remote, BrowserWindow, app } from 'electron';
+import { remote } from 'electron';
 
 @Component({
   selector: 'app-home',
