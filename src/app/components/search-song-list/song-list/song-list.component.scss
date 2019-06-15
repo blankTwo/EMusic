@@ -1,0 +1,32 @@
+.table-list-song {
+  font-size: 12px;
+
+  .table-list-title {
+    border-bottom: 1px solid #dedede65;
+    border-top: 1px solid #dedede65;
+
+    div {
+      padding: 8px 16px;
+    }
+
+    div:nth-child(2) {
+      border-left: 1px solid #dedede65;
+      border-right: 1px solid #dedede65;
+    }
+  }
+
+  .table-list-item {
+    padding: 8px 16px;
+    transition: .2s;
+
+    &:hover {
+      background-color: #e8e8e88a !important;
+      cursor: pointer;
+      transition: .2s;
+    }
+  }
+
+  .d {
+    background-color: #fafafa;
+  }
+}

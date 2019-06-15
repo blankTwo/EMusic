@@ -2,13 +2,13 @@
   <!--  -->
   <div class="tools">
     <div class="d-flex flex-row" style="height: inherit">
-      <div style="width: 400px;">
-        <!-- <div class="d-inline-block sf-title">
+      <div>
+        <div class="d-inline-block sf-title">
           松鼠音乐
         </div>
         <div class="d-inline-block songSearch">
-          <input class="ant-input " type="input" />
-        </div> -->
+          <input #searchValue class="ant-input" (keyup.enter)="onSearch(searchValue.value)" type="input" placeholder="搜索音乐" />
+        </div>
       </div>
       <div class="tools-center"></div>
       <div class="sf-title-right">
@@ -22,49 +22,21 @@
       </div>
     </div>
   </div>
-  <!--  -->
+  <!-- left -->
   <div class="d-flex flex-1">
-    <div class="me-list scrollbar">
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-      <span class="d-block">1</span>
-      <span class="d-block">2</span>
-      <span class="d-block">3</span>
-
+    <!-- left-menu -->
+    <div class="left-list height-100 d-flex flex-column">
+      <div class="flex-1 scrollbar">
+        <app-menu></app-menu>
+      </div>
+      <div style="height: 70px">
+        222
+      </div>
     </div>
-    <div>
-
+    <!-- center-body -->
+    <div class="flex-1">
+      <!-- {{dataList | json}} -->
+      <app-search-song-list [(ngModel)]="searchv"></app-search-song-list>
     </div>
   </div>
 </div>

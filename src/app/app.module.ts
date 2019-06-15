@@ -18,6 +18,15 @@ import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MenuItemDirective } from './directives/menu-item/menu-item.directive';
+import { SearchSongListComponent } from './components/search-song-list/search-song-list.component';
+import { JoinPipe } from './pipe/join/join.pipe';
+import { KeywordPipe } from './pipe/keyword/keyword.pipe';
+import { TabActiveDirective } from './directives/tab-active/tab-active.directive';
+import { SongListComponent } from './components/search-song-list/song-list/song-list.component';
+import { SongSheetListComponent } from './components/search-song-list/song-sheet-list/song-sheet-list.component';
+import { AlbumListComponent } from './components/search-song-list/album-list/album-list.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -25,7 +34,20 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WebviewDirective],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    WebviewDirective,
+    MenuComponent,
+    MenuItemDirective,
+    SearchSongListComponent,
+    JoinPipe,
+    KeywordPipe,
+    TabActiveDirective,
+    SongListComponent,
+    SongSheetListComponent,
+    AlbumListComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,

@@ -1,0 +1,28 @@
+<div class="d-flex flex-column height-100">
+  <div class="resultCount">
+    <span *ngIf="dataList?.length > 0"> 搜索"<span [innerHTML]="name | keyword: keyword"></span>"， 找到 {{ dataCount }} 首单曲 </span>
+  </div>
+
+  <div class="tab-title">
+    <div class="text-65"><span class="tab-title-item tab-title-item-selected" tab-active (click)="onSong()">歌曲</span></div>
+    <div class="text-65"><span class="tab-title-item" tab-active (click)="onSongSheet()">歌单</span></div>
+    <div class="text-65"><span class="tab-title-item" tab-active (click)="onAlbum()">专辑</span></div>
+  </div>
+
+  <ng-container *ngIf="_Song">
+    <!-- 歌曲 -->
+    <div class="flex-1" style="overflow: hidden">
+      <app-song-list [dataList]="dataList" [keyword]="keyword"></app-song-list>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="_SongSheet">
+    <!-- 歌单 -->
+    <app-song-sheet-list></app-song-sheet-list>
+  </ng-container>
+
+  <ng-container>
+    <!-- 专辑 -->
+    <app-album-list *ngIf="_Album"></app-album-list>
+  </ng-container>
+</div>

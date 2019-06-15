@@ -1,0 +1,16 @@
+<ng-container *ngIf="dataList ">
+  <div class="table-list-song flex-1 d-flex flex-column height-100">
+    <div class="d-flex table-list-title">
+      <div class="flex-1 text-65">标题</div>
+      <div class="flex-1 text-65 px-sm">歌手</div>
+      <div class="flex-1 text-65">专辑</div>
+    </div>
+    <div class="flex-1 scrollbar">
+      <div class="d-flex table-list-item" *ngFor="let item of dataList; index as i" [ngClass]="{ d: i % 2 === 0 }">
+        <div class="flex-1 text-truncate" [innerHTML]="item.name | keyword: keyword"></div>
+        <div class="flex-1 text-truncate px-sm" [innerHTML]="item.artists | join"></div>
+        <div class="flex-1 text-truncate" [innerHTML]="item.album.name | keyword: keyword"></div>
+      </div>
+    </div>
+  </div>
+</ng-container>

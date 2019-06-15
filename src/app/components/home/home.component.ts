@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { remote } from 'electron';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { encode } from 'punycode';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,10 @@ import { remote } from 'electron';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  dataList: any;
+  searchv: any;
 
   ngOnInit() {}
 
@@ -25,5 +30,10 @@ export class HomeComponent implements OnInit {
   }
   onCloseEvent() {
     remote.getCurrentWindow().close();
+  }
+
+  onSearch(value: any) {
+    if (!value) { return; }
+    this.searchv = value;
   }
 }

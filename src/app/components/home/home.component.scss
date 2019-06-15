@@ -13,6 +13,7 @@
     -webkit-app-region: drag;
 
     .sf-title {
+      width: 160px;
       letter-spacing: 1px;
       background-image: url("assets/images/ss.png");
       background-repeat: no-repeat;
@@ -21,6 +22,10 @@
     }
     .songSearch{
       -webkit-app-region: no-drag;
+      width: 250px;
+      input{
+        width: 100%;
+      }
     }
 
     .tools-center {
@@ -55,7 +60,7 @@
     }
   }
 
-  .me-list {
+  .left-list {
     width: 200px;
     background: #fafafa;
   }
