@@ -1,0 +1,15 @@
+.aplayer {
+  margin: 0;
+  border-radius: 0;
+}
+.aplayer-lrc-contents{
+  transform: initial !important;
+}
+.aplayer-lrc{
+  position: fixed !important;
+  height: calc(100vh - 140px) !important;
+  width: 100% !important;
+  top: 0 !important;
+  background: #a2c2e4 !important;
+  color: #fff !important;
+}

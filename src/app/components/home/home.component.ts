@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { remote } from 'electron';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { encode } from 'punycode';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +12,8 @@ export class HomeComponent implements OnInit {
 
   dataList: any;
   searchv: any;
+
+  playSongInfo: any;
 
   ngOnInit() {}
 
@@ -33,7 +34,13 @@ export class HomeComponent implements OnInit {
   }
 
   onSearch(value: any) {
-    if (!value) { return; }
+    if (!value) {
+      return;
+    }
     this.searchv = value;
+  }
+
+  onPlaySong(event: any) {
+    this.playSongInfo = event;
   }
 }

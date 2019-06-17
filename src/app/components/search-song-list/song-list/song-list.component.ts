@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-song-list',
@@ -11,6 +11,8 @@ export class SongListComponent implements OnInit {
   private _dataList: any[] = [];
   private _keyword: any;
 
+  songInfo = {};
+  @Output() dbClick = new EventEmitter();
   ngOnInit() {}
 
   @Input() set dataList(value: any[]) {
@@ -25,5 +27,13 @@ export class SongListComponent implements OnInit {
   }
   get keyword() {
     return this._keyword;
+  }
+
+  onPlaySong(item: any) {
+    this.songInfo = {
+      Id: item.id,
+      Name: item.name,
+    };
+    this.dbClick.emit(this.songInfo);
   }
 }

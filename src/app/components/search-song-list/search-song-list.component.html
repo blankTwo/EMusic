@@ -12,7 +12,7 @@
   <ng-container *ngIf="_Song">
     <!-- 歌曲 -->
     <div class="flex-1" style="overflow: hidden">
-      <app-song-list [dataList]="dataList" [keyword]="keyword"></app-song-list>
+      <app-song-list (dbClick)="_onDbClick($event)" [dataList]="dataList" [keyword]="keyword"></app-song-list>
     </div>
   </ng-container>
 

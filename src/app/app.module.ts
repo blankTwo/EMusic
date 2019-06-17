@@ -27,7 +27,10 @@ import { TabActiveDirective } from './directives/tab-active/tab-active.directive
 import { SongListComponent } from './components/search-song-list/song-list/song-list.component';
 import { SongSheetListComponent } from './components/search-song-list/song-sheet-list/song-sheet-list.component';
 import { AlbumListComponent } from './components/search-song-list/album-list/album-list.component';
-
+import { APlayerComponent } from './components/aplayer/aplayer.component';
+import { NgxsModule } from '@ngxs/store';
+import { PlaySong } from './components/song-play-ngxs/song.state';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,12 +50,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     SongListComponent,
     SongSheetListComponent,
     AlbumListComponent,
+    APlayerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxsModule.forRoot([PlaySong]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

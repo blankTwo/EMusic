@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -21,6 +21,8 @@ export class SearchSongListComponent implements OnInit, ControlValueAccessor {
   _Song = true;
   _SongSheet: boolean;
   _Album: boolean;
+
+  @Output() onDbClick = new EventEmitter();
 
   ngOnInit() {}
 
@@ -69,5 +71,9 @@ export class SearchSongListComponent implements OnInit, ControlValueAccessor {
     this._Song = false;
     this._SongSheet = false;
     this._Album = true;
+  }
+
+  _onDbClick(event: any) {
+    this.onDbClick.emit(event);
   }
 }

@@ -4,7 +4,7 @@
     <div class="d-flex flex-row" style="height: inherit">
       <div>
         <div class="d-inline-block sf-title">
-          松鼠音乐
+          我的音乐
         </div>
         <div class="d-inline-block songSearch">
           <input #searchValue class="ant-input" (keyup.enter)="onSearch(searchValue.value)" type="input" placeholder="搜索音乐" />
@@ -29,14 +29,15 @@
       <div class="flex-1 scrollbar">
         <app-menu></app-menu>
       </div>
-      <div style="height: 70px">
-        222
-      </div>
     </div>
     <!-- center-body -->
     <div class="flex-1">
       <!-- {{dataList | json}} -->
-      <app-search-song-list [(ngModel)]="searchv"></app-search-song-list>
+      <app-search-song-list (onDbClick)="onPlaySong($event)" [(ngModel)]="searchv"></app-search-song-list>
     </div>
+  </div>
+  <!-- bottom -->
+  <div>
+    <app-aplayer [SongInfo]="playSongInfo"></app-aplayer>
   </div>
 </div>
